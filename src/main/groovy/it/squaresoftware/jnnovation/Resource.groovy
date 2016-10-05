@@ -1,6 +1,10 @@
-package it.squaresoftware.jnnovation;
+package it.squaresoftware.jnnovation
 
-public enum Resource {
+class Resource {
+
+	enum Type 		{ TOWER, CROWN, TREE, CLOCK, FACTORY, BULB, ERA }
+	enum Position 	{ TOP, LEFT, RIGHT, BOTTOM }
 	
-	TOWER, CROWN, TREE, CLOCK, FACTORY, BULB, ERA
+	Type type
+	List<Position> position
 }
