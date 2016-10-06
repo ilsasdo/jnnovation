@@ -3,7 +3,8 @@ package it.squaresoftware.jnnovation
 class Dogma {
 	enum Type { SUPREMACY, COLLABORATION }
 	
-	Resource resource
-	
+	Type type
+	Resource.Type resource
 	List<Action> actions
+	String text
 }
