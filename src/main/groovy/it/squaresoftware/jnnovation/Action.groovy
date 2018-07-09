@@ -1,6 +1,6 @@
 package it.squaresoftware.jnnovation
 
-public interface Action {
+interface Action {
 	
-	public GameStatus doAction (Player player, GameStatus gameStatus)
+	GameStatus doAction (Player player, GameStatus gameStatus)
 }

@@ -1,8 +1,10 @@
 package it.squaresoftware.jnnovation
 
-import java.util.List;
+import it.squaresoftware.jnnovation.data.Color
+import it.squaresoftware.jnnovation.data.Dogma
+import it.squaresoftware.jnnovation.data.Resource
 
-public class AgeCard extends Card {
+class AgeCard extends Card {
 	int age
 	Color color
 	

@@ -1,8 +1,9 @@
 package it.squaresoftware.jnnovation
 
-import it.squaresoftware.jnnovation.Resource.Position;
+import it.squaresoftware.jnnovation.data.Color
+import it.squaresoftware.jnnovation.data.SplayDirection
 
-public class PlayerDeck {
+class PlayerDeck {
 
 	Color color
 	List<Card> cards

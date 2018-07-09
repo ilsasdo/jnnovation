@@ -1,6 +1,8 @@
-package it.squaresoftware.jnnovation;
+package it.squaresoftware.jnnovation
 
-public interface Player {
+import it.squaresoftware.jnnovation.data.Resource;
+
+interface Player {
 	
 	List<PlayerDeck> getDecks()
 	List<AgeCard> getHandCards()

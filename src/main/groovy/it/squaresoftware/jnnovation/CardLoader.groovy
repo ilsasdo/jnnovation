@@ -1,8 +1,10 @@
 package it.squaresoftware.jnnovation
 
 import groovy.json.JsonSlurper
+import it.squaresoftware.jnnovation.data.Dogma
+import it.squaresoftware.jnnovation.data.Resource
 
-public class CardLoader {
+class CardLoader {
 	
 	List<Card> load (String cardsJson) {
 		def jsonSlurper = new JsonSlurper()
@@ -12,7 +14,7 @@ public class CardLoader {
 		cards.addAll(objects.cards.collect { 
 			new AgeCard ( name: it.name
 						, age: it.age
-						, color:Color.valueOf(it.color.toUpperCase())
+						, color:it.squaresoftware.jnnovation.data.Color.valueOf(it.color.toUpperCase())
 						, resources: it.icons.withIndex().collect { icon, index ->
 							new Resource (type: Resource.Type.valueOf(icon.toUpperCase()), position: getResourcePosition (index))
 						}

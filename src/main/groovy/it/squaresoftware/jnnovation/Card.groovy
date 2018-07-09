@@ -1,5 +1,5 @@
 package it.squaresoftware.jnnovation
 
-public abstract class Card {
+abstract class Card {
 	String name
 }
