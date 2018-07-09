@@ -1,5 +1,6 @@
 package it.squaresoftware.jnnovation
 
+import it.squaresoftware.jnnovation.cards.CardLoader
 import it.squaresoftware.jnnovation.data.Color
 import it.squaresoftware.jnnovation.data.Dogma
 import it.squaresoftware.jnnovation.data.Resource

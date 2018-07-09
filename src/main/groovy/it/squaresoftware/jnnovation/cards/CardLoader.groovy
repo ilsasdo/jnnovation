@@ -1,4 +1,4 @@
-package it.squaresoftware.jnnovation
+package it.squaresoftware.jnnovation.cards
 
 import groovy.json.JsonSlurper
 import it.squaresoftware.jnnovation.data.Dogma
@@ -7,19 +7,19 @@ import it.squaresoftware.jnnovation.data.Resource
 class CardLoader {
 	
 	List<Card> load (String cardsJson) {
-		def jsonSlurper = new JsonSlurper()
+		JsonSlurper jsonSlurper = new JsonSlurper()
 		def objects = jsonSlurper.parseText (cardsJson)
 		
-		def cards = objects.fields.collect { new FieldCard(name: it.name, text:it.text) }
+		List<Card> cards = objects.fields.collect { new FieldCard(it.name, it.text) }
 		cards.addAll(objects.cards.collect { 
-			new AgeCard ( name: it.name
-						, age: it.age
-						, color:it.squaresoftware.jnnovation.data.Color.valueOf(it.color.toUpperCase())
-						, resources: it.icons.withIndex().collect { icon, index ->
-							new Resource (type: Resource.Type.valueOf(icon.toUpperCase()), position: getResourcePosition (index))
+			new AgeCard ( it.name
+						, it.age
+						, it.squaresoftware.jnnovation.data.Color.valueOf(it.color.toUpperCase())
+						, it.icons.withIndex().collect { icon, index ->
+							new Resource (Resource.Type.valueOf(icon.toUpperCase()), getResourcePosition (index))
 						}
-						, dogmas: it.dogmas.collect { dogma ->
-							new Dogma (text: dogma, resource: getDogmaResource(dogma), type: getDogmaType(dogma), actions:[])
+						, it.dogmas.collect { dogma ->
+							new Dogma (dogma, getDogmaResource(dogma), getDogmaType(dogma))
 						})
 		})
 		return cards

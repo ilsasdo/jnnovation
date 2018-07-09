@@ -1,5 +1,6 @@
 package it.squaresoftware.jnnovation
 
+import it.squaresoftware.jnnovation.cards.AgeCard
 import it.squaresoftware.jnnovation.data.Resource;
 
 interface Player {
